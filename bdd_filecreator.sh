@@ -19,7 +19,7 @@ PSD_DATE=`date --date "$date 10 days" +"%d/%m/%Y"`
 FILE_NAME=$1_$2_$3
 
 csvFile=$DIR_NAME/$FILE_NAME.csv
-echo "\"Document No\",\"Revision\",\"Title\",\"Type\",\"Status\",\"Discipline\",\"Attribute 1\",\"Secondary Attribute\",\"File\",\"Print Size\",\"Scale\",\"Percent Complete\",\"Reference\",\"Date Created\",\"Revision Date\",\"Date For Review\",\"Date Reviewed\",\"Date To Client\",\"Date Approved\",\"Authorised by\",\"Author\",\"Comments\",\"Planned Submission Date\",\"Supersede\",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,," > $csvFile
+echo "\"Document No\",\"Revision\",\"Title\",\"Type\",\"Status\",\"Discipline\",\"Attribute 1\",\"Attribute 2\",\"File\",\"Print Size\",\"Scale\",\"Percent Complete\",\"Reference\",\"Date Created\",\"Revision Date\",\"Date For Review\",\"Date Reviewed\",\"Date To Client\",\"Date Approved\",\"Authorised by\",\"Author\",\"Comments\",\"Planned Submission Date\",\"Supersede\",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,," > $csvFile
 
 for i in `seq $2 $3`; 
 do
