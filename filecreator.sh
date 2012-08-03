@@ -19,13 +19,13 @@ PSD_DATE=`date --date "$date 10 days" +"%d/%m/%Y"`
 FILE_NAME=$1_$2_$3
 
 csvFile=$DIR_NAME/$FILE_NAME.csv
-echo "\"Document No\",\"Revision\",\"Title\",\"Type\",\"Status\",\"Discipline\",\"Attribute\",\"Secondary Attribute\",\"File\",\"Print Size\",\"Scale\",\"Percent Complete\",\"Reference\",\"Date Created\",\"Revision Date\",\"Date For Review\",\"Date Reviewed\",\"Date To Client\",\"Date Approved\",\"Authorised by\",\"Author\",\"Comments\",\"Planned Submission Date\",\"Supersede\",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,," > $csvFile
+echo "\"Document No\",\"Revision\",\"Title\",\"Type\",\"Status\",\"Discipline\",\"Attribute\",\"Secondary Attribute\",\"File\",\"Print Size\",\"Scale\",\"Percent Complete\",\"Reference\",\"Date Created\",\"Revision Date\",\"Date For Review\",\"Date Reviewed\",\"Date To Client\",\"Date Approved\",\"Authorised by\",\"Author\",\"Comments\",\"Planned Submission Date\",\"Supersede\"" > $csvFile
 
 for i in `seq $2 $3`; 
 do
   fn=$DIR_NAME/F$i.txt
   echo $i > $fn
-  echo "\""$PREFIX"-"$(printf "%06d" $i)"\",\"A\",\"Test Doc "$i"\",\"Drawing\",\"Draft\",\"Structural\",,,\"F"$i".txt\",,,,,,,,,,,,,,\""$PSD_DATE"\",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,," >> $csvFile
+  echo "\""$PREFIX"-"$(printf "%06d" $i)"\",\"A\",\"Test Doc "$i"\",\"Drawing\",\"Draft\",\"Structural\",,,\"F"$i".txt\",,,,,,,,,,,,,,\""$PSD_DATE"\"," >> $csvFile
 done
 
 ZIP_NAME=$DIR_NAME/$FILE_NAME.zip
